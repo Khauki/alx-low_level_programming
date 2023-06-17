@@ -3,7 +3,7 @@
 /**
  * main - A program that prints the various types on a computer
  *
- * Return: 0 (Success)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
