@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 /**
  * main - A unix simple operating system
  *
@@ -7,6 +7,7 @@
  */
 int main(void)
 {
-	putc(""and that piece of art is useful" - Dora Korpar, 2015-10-19\n", stdout);
+	fprintf(stder, ""and that piece of art is useful" -Dora Korpar,2015-10-19\n");
+
 	return (1);
 }
