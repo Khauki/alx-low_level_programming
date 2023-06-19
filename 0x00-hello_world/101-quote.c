@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - A unix simple operating system
+ * main - Entry point
  *
  * Return: 1 (Success)
  */
