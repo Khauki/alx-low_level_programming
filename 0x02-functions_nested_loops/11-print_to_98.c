@@ -1,19 +1,22 @@
+#include "main.h"
 #include <stdio.h>
 /**
- *main - check for multiples of 3 and 5
- *
- *Return: 0 always
+ * print_to_98 - print all natural numbers from n to 98.
+ * @n: the number to start counting from n to 98
+ * Return: Always 0.
  */
-int main(void)
+void print_to_98(int n)
 {
-int x = 1024, y, sum = 0;
-for (y = 0; y < x; y++)
+if (n < 98)
 {
-if ((y % 3 == 0) || (y % 5 == 0))
-{
-sum = sum + y;
+for (n = n; n < 98; n++)
+printf("%d, ", n);
+printf("%d\n", 98);
 }
+else
+{
+for (n = n; n > 98; n--)
+printf("%d, ", n);
+printf("%d\n", 98);
 }
-printf("%d\n", sum);
-return (0);
 }
