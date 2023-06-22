@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * _isupper - uppercase letters
@@ -13,6 +13,5 @@ int _isupper(int c)
 	{
 		return (1);
 	}
-	else
 		return (0);
 }
