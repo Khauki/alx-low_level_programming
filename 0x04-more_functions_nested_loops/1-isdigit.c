@@ -1,15 +1,15 @@
 #include "main.h"
 
 /**
- * _isupper - uppercase letters
- * @c: char to check
+ * _isupper - check if numbers are 0 - 9
+ * @c: char to checked
  *
- * Return: 1 if c is a digit and 0 if not
+ * Return: 1 or 0
  */
 
 int _isupper(int c)
 {
-	if (c >= 48 && c <= 57)
+	if (c >= '0' && c <= '9')
 	{
 		return (1);
 	}
