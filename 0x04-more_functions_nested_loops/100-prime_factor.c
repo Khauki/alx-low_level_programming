@@ -9,6 +9,7 @@ int main(void)
 {
 	long int max = -1, n = 612852475143;
 	int i = 3;
+
 	while (n % 2 == 0)
 	{
 		max = 2;
