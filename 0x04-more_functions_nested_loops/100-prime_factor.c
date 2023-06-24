@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+
 /**
  * main - prints the largest prime factorial of 612852475143
  *
@@ -27,5 +28,6 @@ int main(void)
 	if (n > 2)
 		max = n;
 	printf("%ld\n", max);
-        return (0);
+
+	return (0);
 }
