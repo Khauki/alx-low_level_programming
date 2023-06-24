@@ -1,22 +1,30 @@
-#include "main.h"
-
+#include <stdio.h>
+#include <math.h>
 /**
- *print_number - print an int
+ * main - prints the largest prime factorial of 612852475143
  *
- *@n: int parameter
+ * Return: 0
  */
-void print_number(int n)
+int main(void)
 {
-	unsigned int h = n;
-
-	if (n < 0)
+	long int max = -1, n = 612852475143;
+	int i = 3;
+	while (n % 2 == 0)
 	{
-		_putchar(45);
-		h = -h;
+		max = 2;
+		n /= 2;
 	}
-	if (h / 10)
+	while (i <= sqrt(n))
 	{
-		print_number(h / 10);
+		while (n % i == 0)
+		{
+			max = i;
+			n = n / i;
+		}
+		i += 2;
 	}
-	_putchar(h % 10 + '0');
+	if (n > 2)
+		max = n;
+	printf("%ld\n", max);
+        return (0);
 }
