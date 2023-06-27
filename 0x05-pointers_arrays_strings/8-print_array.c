@@ -5,8 +5,9 @@
  * print_erray - prints n elements of an erray of integers
  * @a: array of integers
  * @n: number of elements of the erray to be printed
- * Return: void
+ * Return: a and n inputs
  */
+
 void print_array(int *a, int n)
 {
 	int j;
