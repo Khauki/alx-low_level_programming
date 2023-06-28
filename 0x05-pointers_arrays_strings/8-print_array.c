@@ -5,7 +5,7 @@
  * print_array - prints n elements of an erray of integers
  * @a: array of integers
  * @n: number of elements of the erray to be printed
- * Return: a and n inputs
+ * Return: void
  */
 void print_array(int *a, int n)
 {
@@ -16,7 +16,7 @@ void print_array(int *a, int n)
 		printf("%d", a[j]);
 	if (j != (n - 1))
 	{
-		printf(",");
+		printf(" , ");
 	}
 	}
 	printf("\n");
