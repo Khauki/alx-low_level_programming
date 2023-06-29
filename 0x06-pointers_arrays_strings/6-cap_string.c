@@ -4,13 +4,11 @@
  * @a: character to return
  * Return: true or false
  */
-
 int _indexOf(char a)
 {
 	int i;
 	char capArr[13] = {'\n', '\t', ' ', '.', ',', ';', ',', '!', '?', '(',
-')', '{', '}'};
-
+		')', '{', '}'};
 	for (i = 0; i < 13; i++)
 	{
 		if (capArr[i] == a)
@@ -33,7 +31,6 @@ char *cap_string(char *s)
 			continue;
 		if (s[i] >= 'a' && s[i] <= 'z' && (_indexOf(s[i - 1]) || i == 0))
 			s[i] = s[i] - 32;
-
 	}
 	return (s);
 }

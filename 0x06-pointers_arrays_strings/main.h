@@ -18,6 +18,6 @@ int main(void);
 int _putchar(char c);
 char *string_toupper(char *str);
 void rev_string(char *n);
-int _indexOf(char a)
+int _indexOf(char a);
 
 #endif
