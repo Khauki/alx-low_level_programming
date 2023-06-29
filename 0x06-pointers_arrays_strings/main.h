@@ -17,4 +17,6 @@ void print_buffer(char *b, int size);
 int main(void);
 int _putchar(char c);
 char *string_toupper(char *str);
+void rev_string(char *n);
+
 #endif
