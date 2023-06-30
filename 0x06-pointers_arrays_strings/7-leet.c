@@ -2,24 +2,24 @@
 
 /**
  * leet - encode into 1137speak
- * @str: input value
- * Return: str value
+ * @s: input value
+ * Return: s value
  */
-char *leet(char *str)
+char *leet(char *s)
 {
 	int i, j;
 	char s1[] = "aAeEoOtTlT";
 	char s2[] = "4433007711";
 
-		for (i = 0; str[i] != '\0'; i++)
+		for (i = 0; s[i] != '\0'; i++)
 		{
 			for (j = 0; j < 10; j++)
 			{
-				if (str[i] == s1[j])
+				if (s[i] == s1[j])
 				{
-					str[i] = s2[j];
+					s[i] = s2[j];
 				}
 			}
 		}
-	return (str);
+	return (s);
 }
