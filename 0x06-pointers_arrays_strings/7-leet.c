@@ -1,25 +1,26 @@
 #include "main.h"
-
 /**
- * leet - encode into 1137speak
- * @s: input value
- * Return: s value
+ * leet - leet
+ * @s: string
+ * Return: char value
  */
+
 char *leet(char *s)
 {
-	int i, j;
-	char s1[] = "aAeEoOtTlT";
-	char s2[] = "4433007711";
+	char alphaArr[] = "a4A4e3E3o0O0t7T7l1L1";
+	int i;
+	int j;
 
-		for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		for (j = 0; alphaArr[j] != '\0'; j++)
 		{
-			for (j = 0; j < 10; j++)
+			if (s[i] == alphaArr[j])
 			{
-				if (s[i] == s1[j])
-				{
-					s[i] = s2[j];
-				}
+				s[i] = alphaArr[j + 1];
+				break;
 			}
 		}
+	}
 	return (s);
 }
