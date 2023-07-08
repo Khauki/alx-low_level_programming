@@ -2,13 +2,14 @@
 #include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: the characher to print
+ * main - prints the name of the pogram
+ * @argc: number of arguments
+ * @argv: array of arguments
  *
- * Return: on sucess 1
- * on error: 1 is returned and errno is set
+ * Return: 0
  */
-int _putchar(char c)
+int main(int argc, char *argv[])
 {
-	return (write(1, &c, 1));
+	printf("%s\n", *argv);
+	return (0);
 }
