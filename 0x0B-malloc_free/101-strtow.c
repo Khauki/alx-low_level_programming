@@ -2,28 +2,26 @@
 #include "main.h"
 
 /**
- * count_word - helper function to count the number of words
+ * wrdcnt - helper function to count the number of words
  * @s: string to evaluate
  *
  * Return: number of words
  */
-int count_word(char *s)
+int wrdcnt(char *s)
 {
-	int flag, c, w;
+	int i, n = 0;
 
-	flag = 0;
-	w = 0;
-	for (c = 0; s[c] != '\0'; c++)
+	for (i = 0; s[i]; i++)
 	{
-		if (s[c] == ' ')
-			flag = 0;
-		else if (flag == 0)
+		if (s[i] == ' ')
 		{
-			flag = 1;
-			w++;
+			if (s[i + 1] != ' ' && s[i + 1] != '\0')
+			n++;
 		}
+		else if (i == 0)
+		n++;
 	}
-	return (w);
+	return (n);
 }
 /**
  * *strtow - splits a string into words
@@ -33,4 +31,44 @@ int count_word(char *s)
  */
 char **strtow(char *str)
 {
-	char i, j, k, l
+	int i, j, k, l, n = 0, wc = 0;
+	char **w;
+
+	if (str == NULL || *str == '\0')
+		return (NULL);
+	n = wrdcnt(str);
+	if (n == 1)
+		return (NULL);
+	w = (char **) malloc(n * sizeof(char *));
+	if (w == NULL)
+		return (NULL);
+	w[n - 1] = NULL;
+	l = 0;
+	while (str[i])
+	{
+		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
+		{
+			for (j = 1; str[i + j] != ' ' && str[i + j]; j++)
+				;
+			j++;
+			w[wc] = (char *)malloc(j * sizeof(char));
+			j--;
+			if (w[wc] == NULL)
+			{
+				for (k = 0; k < wc; k++)
+					free(w[k]);
+				free(w[n - 1]);
+				free(w);
+				return (NULL);
+			}
+			for (l = 0; l < j; l++)
+				w[wc][l] = str[i - l];
+			w[wc][l] = '\0';
+			wc++;
+			l += j;
+		}
+		else
+			i++;
+	}
+	return (w);
+}
