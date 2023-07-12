@@ -2,40 +2,47 @@
 #include <stdlib.h>
 
 /**
- * *argstostr - main entry
- * @ac: int input
- * @av: double pointer array
- * Return: 0
+ * _strlen - find length of a string
+ * @s: string
+ * Return: int
+ */
+int _strlen(char *s)
+{
+	int size = 0;
+
+		for (; s[size] != '\0'; size++)
+			;
+	return (size);
+}
+
+/**
+ * *argstostr - description
+ * @ac: int
+ * @av: arguments
+ * Return: string
  */
 char *argstostr(int ac, char **av)
 {
-	int i, n, r = 0, t = 0;
-	char *str;
+	int i = 0, nc = 0, j = 0, cmpt = 0;
+	char *s;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	for (i = 0; i < ac; i++)
-	{
-		for (n = 0; av[i][n]; n++)
-			t++;
-	}
-	t += ac;
+	for (; i < ac; i++, nc++)
+	nc += _strlen(av[i]);
 
-	str = malloc(sizeof(char) * t + 1);
-	if (str == NULL)
+	s = malloc(sizeof(char) * nc + 1);
+	if (s == 0)
 		return (NULL);
+
 	for (i = 0; i < ac; i++)
 	{
-		for (n = 0; av[i][n]; n++)
-		{
-			str[r] = av[i][n];
-			r++;
-		}
-		if (str[r] == '\0')
-		{
-			str[r++] = '\0';
-		}
+		for (j = 0; av[i][j] != '\0'; j++, cmpt++)
+			s[cmpt] = av[i][j];
+
+		s[cmpt] = '\n';
+			cmpt++;
 	}
-	return (str);
+	return (s);
 }
