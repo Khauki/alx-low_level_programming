@@ -24,11 +24,10 @@ int is_digit(char *s)
 }
 
 /**
- * _strlen - returns the lenght of a string
- * @s: string to evaluate
+ * _strlen - returns the length of a string
  * @s: string to evaluate
  *
- * Return: the lenght of the string
+ * Return: the length of the string
  */
 int _strlen(char *s)
 {
