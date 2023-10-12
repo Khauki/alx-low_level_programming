@@ -3,14 +3,15 @@
 #include <stdarg.h>
 
 /**
- * print_numbers - prints numbers, followed by a new line
- * @separator: the string tto tbe printed between numbers
+ * print_numbers - print numbers, followed by a new line
+ * @separator: the string to the printed numbers
  * @n: the number of integers passed to the function
  * @...: a variable number of number to be printed
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list nums;
+
 	unsigned int i;
 
 	va_start(nums, n);
@@ -22,6 +23,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		if (i != (n - 1) && separator != NULL)
 			printf("%s", separator);
 	}
+
 	printf("\n");
 
 	va_end(nums);
