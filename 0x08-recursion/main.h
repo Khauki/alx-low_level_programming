@@ -14,4 +14,5 @@ int wildcmp(char *s1, char *s2);
 int _putchar(char c);
 int compare_string(char *s, int n1, int n2);
 int sqrt_a(int a, int b);
+int magic(char *s1, char *s2);
 #endif
