@@ -2,14 +2,14 @@
 
 /**
  * _puts - Puts a string
- * @str: the string to print
+ * @s: the string to print
  * Return: void
  */
-void _puts(char *str)
+void _puts(char *s)
 {
-	for (; *str != '\0'; str++)
+	for (; *s != '\0'; s++)
 	{
-		putchar(*str);
+		putchar(*s);
 	}
 	putchar('\n');
 }
