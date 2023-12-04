@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stddef.h>
 /**
  * clear_bit - sets the value of a given bit to 0
  * @n: pointer to the number to change
@@ -9,9 +9,15 @@
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	if (index > 63)
+	unsigned int mask;
+
+	mask = 1;
+	mask = mask << index;
+	if (index > sizeof(unsigned long int) * 8 || n == NULL)
 		return (-1);
 
-	*n = (-(1UL << index) & *n);
+	if (((*n >> index) & 1) == 1)
+		*n = mask ^ *n;
+
 	return (1);
 }
